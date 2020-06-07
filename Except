@@ -1,0 +1,22 @@
+--Except exibe os valores da primeira tabela que não consta na segunda tabela
+
+
+SELECT  *
+FROM    (VALUES
+        ('A',1)
+,       ('B',2)
+,       ('C',3)
+)AS Exemplo1([Letra],[Numero])
+
+EXCEPT
+
+SELECT  *
+FROM    (VALUES
+        ('B',2)
+,       ('C',3)
+,       ('D',4)
+)AS Exemplo1([Letra],[Numero])
+
+--Esperado 
+--Letra	Numero
+--A	    1

@@ -1,0 +1,23 @@
+--Intesect exibe os valores que são comuns entre duas tabelas
+
+
+SELECT  *
+FROM    (VALUES
+        ('A',1)
+,       ('B',2)
+,       ('C',3)
+)AS Exemplo1([Letra],[Numero])
+
+INTERSECT
+
+SELECT  *
+FROM    (VALUES
+        ('B',2)
+,       ('C',3)
+,       ('D',4)
+)AS Exemplo1([Letra],[Numero])
+
+--Esperado 
+--Letra	Numero
+--B	2
+--C	3
